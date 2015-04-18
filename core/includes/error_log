@@ -1,0 +1,5 @@
+[25-Jan-2015 23:27:09 America/Chicago] PHP Parse error:  syntax error, unexpected 'titulo_obj' (T_STRING) in /home4/datilano/public_html/system/core/includes/objetos.php on line 63
+[25-Jan-2015 23:27:44 America/Chicago] PHP Fatal error:  Call to undefined function DibujaComboBox() in /home4/datilano/public_html/system/core/includes/objetos.php on line 21
+[25-Jan-2015 23:28:09 America/Chicago] PHP Fatal error:  Call to undefined function DibujaComboBox() in /home4/datilano/public_html/system/core/includes/objetos.php on line 21
+[25-Jan-2015 23:28:16 America/Chicago] PHP Fatal error:  Call to undefined function DibujaComboBox() in /home4/datilano/public_html/system/core/includes/objetos.php on line 21
+[25-Jan-2015 23:29:53 America/Chicago] PHP Fatal error:  Call to undefined function getValue() in /home4/datilano/public_html/system/core/includes/objetos.php on line 22

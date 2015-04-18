@@ -1,0 +1,29 @@
+table.generic { border-collapse: collapse; border-spacing: 0; font-family: Futura, Arial, sans-serif; margin: 0 auto; width:100%; }
+table.generic caption { 
+	font-size: x-large;
+	margin: 1em auto;
+	font-family: cursive;
+	color: #383969;
+} 
+table.generic th, table.generic td { padding: .65em; } 
+table.rounded th, table.rounded td { padding: .75em; }
+table.rounded th { 
+	background: -webkit-linear-gradient(#281CAC,#285DAD);
+	background: -moz-linear-gradient(#281CAC,#285DAD);
+	background: -o-linear-gradient(#281CAC,#285DAD);
+	background: -ms-linear-gradient(#281CAC,#285DAD);
+	background: linear-gradient(#281CAC,#285DAD);
+	color: #fff;
+}
+table.rounded th:first-child { border-radius: 9px 0 0 0; } 
+table.rounded th:last-child { border-radius: 0 9px 0 0; } 
+table.rounded tr:last-child td:first-child { border-radius: 0 0 0 9px; }
+table.rounded tr:last-child td:last-child { border-radius: 0 0 9px 0; }  
+/*table.rounded tr:last-child td { background:#ccc; }
+table.rounded tbody tr:nth-child(odd) { background: #ccc; }
+table.rounded tbody tr:last-child { background: none; }*/
+tr.non { background:#ccc; }
+tr.non:hover{ background:#A1F8FF; cursor:pointer;}
+tr.par { background:#E7E7E7; }
+tr.par:hover{ background:#A1F8FF; cursor:pointer;}
+div.add { float:right; }

@@ -6,7 +6,7 @@
     <!-- Basic Page Needs
   ================================================== -->
     <meta charset="utf-8">
-    <title>Login Copa Everes Alpes</title>
+    <title>Login Guarda Codigo</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -254,7 +254,6 @@ p.error {
             </div>
         </div>
     </div>
-	<center><a href="http://copa-everest-alpes.com/wp-content/uploads/2014/03/Manual-Sistema-de-Competidores1.pdf" target="_blank"><font color="#fff"><b>Manual para el uso del Sistema</b></font></a></center>
     <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script type="text/javascript">
 	<!--

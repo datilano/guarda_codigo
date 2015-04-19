@@ -7,7 +7,7 @@
 	$order_by_tabla = $arrTabla["order_by_tabla"];
 ?>
 <table class="generic rounded">
-<caption><?php echo $titulo_tabla?><div class="add"><?php if(dentroInscripcion($arrConf["fecha_insc_ini"], $arrConf["fecha_insc_fin"])) echo "<a href='".$_SERVER['PHP_SELF'] . "?a=add'><img src='images/add.png' width=32 height=32></a>"; ?></div></caption>
+<caption><?php echo $titulo_tabla?><div class="add"><?php echo "<a href='".$_SERVER['PHP_SELF'] . "?a=add'><img src='images/add.png' width=32 height=32></a>"; ?></div></caption>
 <thead>
 	<tr>
 		<?php 
@@ -58,12 +58,12 @@
 				echo "<td onclick='frmEdit(". $rowRows[$pk_tabla] . ")'>". $rowRows[$arrColumns[$i]] . "</td>";
 			//}
 		}
-		if(dentroInscripcion($arrConf["fecha_insc_ini"], $arrConf["fecha_insc_fin"])){
+		//if(dentroInscripcion($arrConf["fecha_insc_ini"], $arrConf["fecha_insc_fin"])){
 			echo "<td><a href='javascript:confirmaBorraRegistro(" . $rowRows[$pk_tabla] . ")'><img src='images/delete.png' width='16' height='16' border='0' alt=''></a></td>";
-		}else{
+		//}else{
 			//echo "<td><a href='javascript:alert(&quot;El sistema ha sido bloqueado, ya no puedes hacer movimientos&quot;)'><img src='images/delete.png' width='16' height='16' border='0' alt=''></a></td>";
-			echo "<td></td>";
-		}
+		//	echo "<td></td>";
+		//}
 		/*if($id_proc==8 && dentroInscripcion($arrConf["fecha_insc_ini"], $arrConf["fecha_insc_fin"])) {
 			echo "<td><a href='?id_mod=2&id_proc=12&id_alumno=" . $rowRows[$pk_tabla] . "'><img src='images/inscripcion.png' width='24' height='24' border='0' alt=''></a></td>";
 		}elseif($id_proc==8){

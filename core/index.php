@@ -30,8 +30,9 @@ $id_tipo_proc = getValue($conexion, "procesos", "id_tipo_proc", "id_proc = '$id_
 <!DOCTYPE html>
 <html>
 <head>
-<title>Copa Everest 2015</title>
+<title>Guarda Codigo</title>
 <meta charset="utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 <link rel="stylesheet" href="css/table.css" type="text/css" media="all">
@@ -138,7 +139,7 @@ $id_tipo_proc = getValue($conexion, "procesos", "id_tipo_proc", "id_proc = '$id_
     <section id="content">
       <?php if($id_proc==""){ ?>
 	  <div id="banner">
-        <h2>Fecha Limite Inscripci&oacute;n<span>3 de Marzo del 2015<span>No se recibir&aacute;n mas <br>inscripciones despues de esta fecha</span></span></h2>
+        <h2>Guarda Codigo<span>Genera tus propios <br>codigos y comparte</span></h2>
       </div>
 	  <?php }else{ ?>
 	  <div class="inside">

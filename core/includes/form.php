@@ -35,12 +35,6 @@ if(isset($_GET["id_reg"]) && $id_proc==8) {
 		$closeForm = ($lastRec==$id_obj);
 		$oValor = getValue($conexion, $nombre_tabla, $nombre_obj, "$pk_tabla = '$id_reg'");
 		
-		if($nombre_obj == "curp_alum"){
-			echo "</br>Puedes consultar el CURP dando clic <a href='javascript:window.open(\"http://consultas.curp.gob.mx/CurpSP/\",\"CURP\",\"width=600,height=500\")'>aqui</a>
-			</br></br>Puedes generar el CURP dando clic <a href='http://www.consisa.com.mx/rfc.html' target='_blank'>aqui</a>
-			</br><font color='#ff0000' style='font-size: x-small;'>PRECAUCIÓN: La segunda opción no tiene validez oficial</font>";
-		}	
-
 		switch($id_tipo_obj){
 			//Text
 			case 1:

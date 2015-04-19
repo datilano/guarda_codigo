@@ -149,7 +149,7 @@ if($res){
 	echo "<script>alert('Registro guardado correctamente');</script>";
 }else{
 	if(mysql_errno()==1062){
-		echo "<script>alert('Un alumno ya esta registrado con la misma CURP');";
+		echo "<script>alert('Error al guardar el registro');";
 	}else{
 		echo "<script>alert('Hubo un error al dar de alta');";
 	}	
@@ -172,17 +172,6 @@ switch($id_proc){
 			$id_reg = mysql_insert_id();
 		}
 		echo "<script>location.href='index.php?id_proc=5&id_reg=$id_reg'</script>";
-		break;
-	//8 -> Alumnos, al editar o agregar usuario, enviar a la selección de categorias
-	case 8:
-		if($a == "add") {
-			$id_reg = mysql_insert_id();
-		}
-		if(dentroInscripcion($arrConf["fecha_insc_ini"], $arrConf["fecha_insc_fin"]) AND mysql_errno()!=1062){
-			echo "<script>location.href='index.php?id_mod=2&id_proc=12&id_alumno=$id_reg'</script>";
-		}else{
-			echo "<script>location.href='index.php'</script>";
-		}
 		break;
 	//14 -> Usuarios, al crear un usuario, enviar correo con contraseña
 	case 14:

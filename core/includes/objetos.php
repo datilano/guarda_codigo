@@ -58,7 +58,7 @@
 					//Ver datos guardados en la tabla 'objetos'
 					$qryVal = "SELECT * FROM objetos WHERE id_tabla_obj='$id_tabla' AND nombre_obj='$field'";
 					$resVal = mysql_query($qryVal);
-//					if(mysql_num_rows($resVal)>0){
+					if(mysql_num_rows($resVal)>0){
 						$rowVal				= mysql_fetch_array($resVal);
 						$titulo_obj			= $rowVal["titulo_obj"];
 						$id_tipo_obj		= $rowVal["id_tipo_obj"];
@@ -70,7 +70,7 @@
 						$campo_obj			= $rowVal["campo_obj"];
 						$mostrar_obj		= $rowVal["mostrar_obj"];
 						$order_obj			= $rowVal["order_obj"];
-//					}
+					}
 
 					//Forma para capturar los datos de los objetos
 					DibujaTextBox("titulo_obj[\"" . $field . "\"]","Titulo","",1,"Escribe titulo..",$titulo_obj,0);

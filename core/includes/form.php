@@ -1,3 +1,26 @@
+<style>
+textarea {
+  background-color: #F8F8F8;
+  border: 0;
+  display: block;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, monospace, serif;
+  font-size: 12px;
+  height: 300px;
+  line-height: 21px;
+  margin-bottom: 0;
+  width: 98%;
+  padding: 1%;
+}
+
+.form2 {
+  width: 100%;
+}
+
+.inputtextbox {
+  height: 100%;
+}
+
+</style>
 <?php
 //No permitir modificar alumnos de otras escuelas
 if(isset($_GET["id_reg"]) && $id_proc==8) {
@@ -59,7 +82,13 @@ if(isset($_GET["id_reg"]) && $id_proc==8) {
 				break;
 			//Hidden
 			case 8:
-				if($oValor == "" and $id_proc == 8) $oValor = $_SESSION["esc_id_usr"];
+				if($oValor == ""){
+					switch($id_proc){
+						case 20:
+							$oValor = $_SESSION["id_usr"];
+						break;
+					}
+				}
 				DibujaHidden($nombre_obj,$oValor);
 				break;
 			//Date
@@ -80,47 +109,14 @@ if(isset($_GET["id_reg"]) && $id_proc==8) {
 		}
 	}
 
+	switch($id_proc){
+		case 20:
+			DibujaComboBox("opcion_sino","id_opcion","nombre_opcion","",1,"","","compartir","Compartir","","","",$conexion,0,false);
+			DibujaTextBox("correos_compartir","Correos para compartir (Separar con: ,)","","","","",true);
+		break;
+	}
+
 	?>
-	<!-- 
-	<div class="input">
-		<div class="inputtext">Your Name: </div>
-		<div class="inputcontent">
-
-			<input type="text" />
-
-		</div>
-	</div>
-
-	<div class="input">
-		<div class="inputtext">Your Surname: </div>
-		<div class="inputcontent">
-
-			<select name="">
-				<option value="" selected>1
-				<option value="">2
-			</select>
-
-		</div>
-	</div>
-
-	<div class="input">
-		<div class="inputtext">Your Email: </div>
-		<div class="inputcontent">
-
-			<input type="text" />
-
-		</div>
-	</div>
-
-	<div class="inputtextbox nobottomborder">
-		<div class="inputtext">Message: </div>
-		<div class="inputcontent">
-
-			<textarea class="textarea"></textarea>
-
-		</div>
-	</div>
-	-->
 	<div class="buttons">
 		<input type="hidden" name="a" value="<?php echo $_GET["a"]; ?>">
 		<input type="hidden" name="id_reg" value="<?php echo $_GET["id_reg"]; ?>">
@@ -133,16 +129,9 @@ if(isset($_GET["id_reg"]) && $id_proc==8) {
 </form>
 <script>
 	$( document ).ready(function() {
-		$( "#gen_pwd" ).click(function() {
-			var text = "";
-			var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-			for( var i=0; i < 10; i++ )
-				text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-			prompt("Contraseña generada:",text);
-			$( ".txt_pwd" ).val(text);
-			return false;
+		$("#div_correos_compartir").hide();
+		$("#compartir").change(function() {
+			$("#div_correos_compartir").show();
 		});
 	});
 </script>

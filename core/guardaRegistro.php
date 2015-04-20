@@ -180,6 +180,12 @@ switch($id_proc){
 		sendPwdUser($_POST["user_usr"], $_POST["correo_usr"], $auxPwdUsr);
 		echo "<script>location.href='index.php'</script>";
 		break;
+	case 20:
+		if($_POST["compartir"]=="1"){
+			$lenguaje_cog = getValue($conexion, "lenguajes", "nombre_leng", "id_leng='" . $_POST["id_leng"] . "'");
+			sendCodigo($_SESSION["nombre_usr"], $_POST["correos_compartir"], htmlspecialchars($_POST["codigo"]), $_POST["nombre_cod"], $lenguaje_cog);
+		}
+		echo "<script>location.href='index.php'</script>";
 	default:
 		echo "<script>location.href='index.php'</script>";
 		break;

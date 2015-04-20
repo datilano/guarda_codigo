@@ -517,7 +517,7 @@ function DibujaTextBox($oNombre,$oTitulo,$oMaxLen,$oObjReq,$opHolder,$oValor,$cl
 	$oValor = validaObjeto($oValor, "value");
 	$closeForm = validaObjeto($closeForm, "close");
 	echo "
-		<div class='input $closeForm'>
+		<div id='div_" . $oNombre . "' class='input $closeForm'>
 			<div class=inputtext>$oTitulo: </div>
 			<div class=inputcontent>
 				<input type='text' name='" . $oNombre . "' id='" . $oNombre . "' " . $oValor . " " . $oMaxLen . " " . $opHolder . " " . $oObjReq . "/>
@@ -1074,7 +1074,7 @@ function sendPwdUser($Usr, $sendTo, $password){
 	$mail->Subject = 'Acceso Sistema Copa Everest-Alpes';
 	$mail->Body    = "	<p>Estimado usuario,</p>
 
-						<p>Para poder accesar al sistema de la Copa Everest 2015 favor de accesar a la siguiente pagina: <a href='http://system.copa-everest.com'>http://system.copa-everest.com</a></p>
+						<p>Para poder accesar al sistema de Guarda Codigo favor de accesar a la siguiente pagina: <a href='http://guarda-codigos.copa-everest.com/'>http://guarda-codigos.copa-everest.com/</a></p>
 
 						<p>Los datos para que puedas accesar al sistemas son los siguientes:</p>
 
@@ -1082,11 +1082,58 @@ function sendPwdUser($Usr, $sendTo, $password){
 
 						<p>Contrase&ntilde;a: $password</p>
 
-						<p>Cualquier duda favor de enviar un correo a la siguiente direccion: <a href='mailto:srosales@edu.everestchihuahua.com'>srosales@edu.everestchihuahua.com</a></p>
+						<p>Atte.</p>
+
+						<p>Sistemas Guarda Codigo</p>";
+
+	if(!$mail->send()) {
+	   echo '<script>alert("Error: ' . $mail->ErrorInfo . '"); </script>';
+	}else{
+		echo '<script>alert("Se ha enviado correo al usuario"); </script>';
+	}
+}
+
+// *******************************
+// Función para enviar el codigo a los usuarios
+// *******************************
+function sendCodigo($Usr, $sendTo, $codigo, $nombre_cod, $lenguaje_cog){
+	require 'clases/PHPMailer/PHPMailerAutoload.php';
+
+	$mail = new PHPMailer;
+
+	$mail->isSMTP();                                      // Set mailer to use SMTP
+	$mail->Host = 'mail.copa-everest.com';					  // Specify main and backup server
+	$mail->SMTPAuth = true;                               // Enable SMTP authentication
+	$mail->Username = 'codigos@guarda-codigos.copa-everest.com';		  // SMTP username
+	$mail->Password = 'GuardaCodigos123';                     // SMTP password
+//	$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+	$mail->Port = 587;
+
+	$mail->From = 'codigos@guarda-codigos.copa-everest.com';
+	$mail->FromName = 'Guarda Codigo';
+
+	$correos = explode(",",$sendTo);
+	foreach($correos as $correo){
+		$mail->addAddress($correo, "");					  // Add a recipient
+	}
+
+	$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+	$mail->isHTML(true);                                  // Set email format to HTML
+
+	$mail->Subject = 'Te han compartido un codigo';
+	$mail->Body    = "	<p>Estimado usuario,</p>
+
+						<p>El usuario <b>$Usr</b> te ha compartido un codigo, el codigo es el siguiente:</p>
+
+						<p>Nombre: $nombre_cod</p>
+
+						<p>Lenguaje: $lenguaje_cog</p>
+
+						<p>$codigo</p>
 
 						<p>Atte.</p>
 
-						<p>Sistemas Copa Everest 2015</p>";
+						<p>Sistema de Guarda Codigo</p>";
 
 	if(!$mail->send()) {
 	   echo '<script>alert("Error: ' . $mail->ErrorInfo . '"); </script>';

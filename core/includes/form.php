@@ -112,7 +112,7 @@ if(isset($_GET["id_reg"]) && $id_proc==8) {
 	switch($id_proc){
 		case 20:
 			DibujaComboBox("opcion_sino","id_opcion","nombre_opcion","",1,"","","compartir","Compartir","","","",$conexion,0,false);
-			DibujaTextBox("correos_compartir","Correos para compartir (Separar con: ,)","","","","",true);
+			DibujaTextBox("correos_compartir","Correos para compartir (Separar con ,)","","","","",true);
 		break;
 	}
 

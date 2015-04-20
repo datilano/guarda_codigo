@@ -1059,19 +1059,19 @@ function sendPwdUser($Usr, $sendTo, $password){
 	$mail->isSMTP();                                      // Set mailer to use SMTP
 	$mail->Host = 'copa-everest.com';					  // Specify main and backup server
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'sistemas@copa-everest.com';  // SMTP username
-	$mail->Password = '*.AL^(UTSi~@';                     // SMTP password
+	$mail->Username = 'codigos@guarda-codigos.copa-everest.com';		  // SMTP username
+	$mail->Password = 'GuardaCodigos123';                     // SMTP password
 //	$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
 	$mail->Port = 25;
 
-	$mail->From = 'sistemas@copa-everest.com';
-	$mail->FromName = 'Sistemas Copa Everest';
+	$mail->From = 'codigos@guarda-codigos.copa-everest.com';
+	$mail->FromName = 'Guarda Codigo';
 	$mail->addAddress($sendTo, $nameUsr);					  // Add a recipient
 
 	$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
 	$mail->isHTML(true);                                  // Set email format to HTML
 
-	$mail->Subject = 'Acceso Sistema Copa Everest-Alpes';
+	$mail->Subject = 'Acceso Sistema Guarda Codigo';
 	$mail->Body    = "	<p>Estimado usuario,</p>
 
 						<p>Para poder accesar al sistema de Guarda Codigo favor de accesar a la siguiente pagina: <a href='http://guarda-codigos.copa-everest.com/'>http://guarda-codigos.copa-everest.com/</a></p>
